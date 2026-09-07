@@ -2128,11 +2128,12 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar {
     position: sticky;
-    top: 30px;
-    max-height: calc(100vh - 60px);
+    align-self: flex-start;
+    top: 40px;
+    max-height: calc(100vh - 80px);
     height: auto;
     margin-bottom: 0;
-    padding: 30px 24px 24px;
+    padding: 40px 28px 26px;
     overflow-y: auto;
     scrollbar-width: thin;
     z-index: 1;
@@ -2140,7 +2141,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar-info {
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
   }
 
   .sidebar .avatar-box {
@@ -2149,8 +2150,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .sidebar .avatar-box img {
-    width: 120px;
-    height: 120px;
+    width: 145px;
+    height: 145px;
     object-fit: cover;
     object-position: center;
   }
@@ -2158,13 +2159,13 @@ textarea.form-input::-webkit-resizer { display: none; }
   .info-content .name {
     white-space: nowrap;
     text-align: center;
-    font-size: 22px;
-    margin-bottom: 8px;
+    font-size: 25px;
+    margin-bottom: 14px;
   }
 
   .info-content .title {
     margin: auto;
-    padding: 4px 12px;
+    padding: 5px 18px;
   }
 
   .info_more-btn { display: none; }
@@ -2174,25 +2175,25 @@ textarea.form-input::-webkit-resizer { display: none; }
     visibility: visible;
   }
 
-  .sidebar .separator { margin: 18px 0; }
+  .sidebar .separator { margin: 28px 0; }
 
   .contacts-list {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 18px;
   }
 
-  .sidebar .contact-item { gap: 12px; }
+  .sidebar .contact-item { gap: 16px; }
 
   .sidebar .icon-box {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 16px;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    font-size: 18px;
   }
 
   .sidebar .contact-info {
-    max-width: calc(100% - 52px);
-    width: calc(100% - 52px);
+    max-width: calc(100% - 62px);
+    width: calc(100% - 62px);
   }
 
   .contact-info :is(.contact-link) {
@@ -2202,12 +2203,12 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .contact-info :is(.contact-link, time, address) {
-    --fs-7: 13px;
+    --fs-7: 14px;
     font-weight: var(--fw-300);
   }
 
   .separator:last-of-type {
-    margin: 12px 0;
+    margin: 15px 0;
     opacity: 0;
   }
 
