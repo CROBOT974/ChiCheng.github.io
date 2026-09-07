@@ -1,6 +1,27 @@
 'use strict';
 
 
+const body = document.body;
+
+const themeToggle = document.getElementById("themeToggle");
+
+const applyTheme = function (theme) {
+  body.setAttribute("data-theme", theme);
+  const isLight = theme === "light";
+  themeToggle.innerHTML = isLight
+    ? '<ion-icon name="sunny-outline"></ion-icon>'
+    : '<ion-icon name="moon-outline"></ion-icon>';
+  localStorage.setItem("theme", theme);
+};
+
+const savedTheme = localStorage.getItem("theme") || "dark";
+applyTheme(savedTheme);
+
+themeToggle.addEventListener("click", function () {
+  const currentTheme = body.getAttribute("data-theme") === "light" ? "dark" : "light";
+  applyTheme(currentTheme);
+});
+
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
@@ -13,45 +34,6 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
-
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
-  });
-
-}
-
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
 
 
 
@@ -82,9 +64,13 @@ const filterFunc = function (selectedValue) {
 
   for (let i = 0; i < filterItems.length; i++) {
 
+    const itemCategories = filterItems[i].dataset.category
+      .split(",")
+      .map((category) => category.trim());
+
     if (selectedValue === "all") {
       filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
+    } else if (itemCategories.includes(selectedValue)) {
       filterItems[i].classList.add("active");
     } else {
       filterItems[i].classList.remove("active");
@@ -140,20 +126,40 @@ for (let i = 0; i < formInputs.length; i++) {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
+const setActiveNavLink = function (activeLink) {
+  navigationLinks.forEach((link) => {
+    link.classList.toggle("active", link === activeLink);
+  });
+};
+
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
+    const targetId = this.dataset.target;
+    const targetPage = document.getElementById(targetId);
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
+    if (targetPage) {
+      setActiveNavLink(this);
+      targetPage.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-
   });
 }
+
+const observerOptions = { root: null, threshold: 0.45 };
+const sectionObserver = new IntersectionObserver(function (entries) {
+  const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+
+  if (!visibleEntries.length) return;
+
+  const mostVisible = visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  const targetId = mostVisible.target.id;
+  const activeLink = document.querySelector(`[data-target="${targetId}"]`);
+
+  if (activeLink) {
+    setActiveNavLink(activeLink);
+  }
+}, observerOptions);
+
+pages.forEach((page) => {
+  sectionObserver.observe(page);
+});

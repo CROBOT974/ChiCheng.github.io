@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard - Personal Portfolio</title>
+  <title>Chi Cheng - Personal Portfolio</title>
 
   <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="icon" href="./assets/images/my%20image.png" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/images/my%20image.png">
 
   <!--
     - custom css link
@@ -27,6 +28,11 @@
 
 <body>
 
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+    <ion-icon name="moon-outline"></ion-icon>
+    <span>Night</span>
+  </button>
+
   <!--
     - #MAIN
   -->
@@ -42,13 +48,13 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80">
+          <img src="./assets/images/my%20image.png" alt="Chi Cheng" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Richard hanrick</h1>
+          <h1 class="name" title="Chi Cheng / 程迟">Chi Cheng <span style="font-size: 1.4ch; opacity: 0.9;">程迟</span></h1>
 
-          <p class="title">Web developer</p>
+          <p class="title">Robotics Research Assistant</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -74,7 +80,7 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:richard@example.com" class="contact-link">richard@example.com</a>
+              <a href="mailto:chi646529@gmail.com" class="contact-link">chi646529@gmail.com</a>
             </div>
 
           </li>
@@ -88,21 +94,7 @@
             <div class="contact-info">
               <p class="contact-title">Phone</p>
 
-              <a href="tel:+12133522795" class="contact-link">+1 (213) 352-2795</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">June 23, 1982</time>
+              <a href="tel:+8615385433886" class="contact-link">+86 153 8543 3886</a>
             </div>
 
           </li>
@@ -116,7 +108,7 @@
             <div class="contact-info">
               <p class="contact-title">Location</p>
 
-              <address>Sacramento, California, USA</address>
+              <address>Hangzhou, Zhejiang, China</address>
             </div>
 
           </li>
@@ -128,20 +120,20 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
+            <a href="https://github.com/CROBOT974" class="social-link" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
+            <a href="https://www.linkedin.com/in/chi-cheng-70b1891b4/" class="social-link" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
+            <a href="mailto:chi646529@gmail.com" class="social-link">
+              <ion-icon name="mail-outline"></ion-icon>
             </a>
           </li>
 
@@ -170,23 +162,23 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link active" data-nav-link data-target="about" type="button">About</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link data-target="resume" type="button">Resume</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link data-target="portfolio" type="button">Portfolio</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
+            <button class="navbar-link" data-nav-link data-target="publications" type="button">Publications</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
+            <button class="navbar-link" data-nav-link data-target="contact" type="button">Address</button>
           </li>
 
         </ul>
@@ -201,7 +193,9 @@
         - #ABOUT
       -->
 
-      <article class="about  active" data-page="about">
+      <article id="about" class="about active" data-page="about">
+
+        <div class="about-hero-bg" aria-hidden="true"></div>
 
         <header>
           <h2 class="h2 article-title">About me</h2>
@@ -209,17 +203,21 @@
 
         <section class="about-text">
           <p>
-            I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-            I enjoy
-            turning complex problems into simple, beautiful and intuitive designs.
+            I am a research assistant in robotics at Westlake University. My interest lies in exploring cutting-edge
+            advancements in robotics, including dynamic manipulation, deep reinforcement learning (DRL) for real-world
+            deployment, and human-robot collaboration (HRC).
           </p>
 
           <p>
-            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-            Moreover, I
-            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-            across your
-            message and identity in the most creative way. I created web design for many famous brand companies.
+            My current research project involves privileged physical information in training DRL for mobile manipulation.
+            I am eager to further strengthen my expertise and contribute to innovative research on robot
+            loco-manipulation or HRC in dynamic environments.
+          </p>
+
+          <p>
+            <a href="https://drive.google.com/file/d/1D1o8QPE764KWhv3vcwa680BKlf1yPZEo/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              CV
+            </a>
           </p>
         </section>
 
@@ -230,22 +228,21 @@
 
         <section class="service">
 
-          <h3 class="h3 service-title">What i'm doing</h3>
+          <h3 class="h3 service-title">Research Interests</h3>
 
           <ul class="service-list">
 
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
+                <ion-icon name="hardware-chip-outline"></ion-icon>
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
+                <h4 class="h4 service-item-title">Dynamic Manipulation</h4>
 
                 <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
+                  Agile, dynamic motions for real-world robotic manipulation tasks.
                 </p>
               </div>
 
@@ -254,14 +251,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                <ion-icon name="analytics-outline"></ion-icon>
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
+                <h4 class="h4 service-item-title">Deep Reinforcement Learning</h4>
 
                 <p class="service-item-text">
-                  High-quality development of sites at the professional level.
+                  Training robust policies for real-world deployment and fluid control.
                 </p>
               </div>
 
@@ -270,14 +267,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+                <ion-icon name="options-outline"></ion-icon>
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
+                <h4 class="h4 service-item-title">Compliant Control</h4>
 
                 <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
+                  Impedance and force control for safe physical interaction.
                 </p>
               </div>
 
@@ -286,216 +283,17 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+                <ion-icon name="people-outline"></ion-icon>
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Photography</h4>
+                <h4 class="h4 service-item-title">Human-Robot Collaboration</h4>
 
                 <p class="service-item-text">
-                  I make high-quality photos of any category at a professional level.
+                  Safe and intuitive physical human-robot teamwork.
                 </p>
               </div>
 
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-
-        <section class="clients">
-
-          <h3 class="h3 clients-title">Clients</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
-              </a>
             </li>
 
           </ul>
@@ -512,7 +310,7 @@
         - #RESUME
       -->
 
-      <article class="resume" data-page="resume">
+      <article id="resume" class="resume" data-page="resume">
 
         <header>
           <h2 class="h2 article-title">Resume</h2>
@@ -532,41 +330,48 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">University school of the arts</h4>
+              <h4 class="h4 timeline-item-title">Imperial College London</h4>
 
-              <span>2007 — 2008</span>
+              <span>2023 — 2024</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                M.S. in Human and Biological Robotics
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">New york academy of art</h4>
+              <h4 class="h4 timeline-item-title">King's College London</h4>
 
-              <span>2006 — 2007</span>
+              <span>2020 — 2022</span>
 
               <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
+                M.S. in Robotics
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">High school of art and design</h4>
+              <h4 class="h4 timeline-item-title">University of the West of Scotland</h4>
 
-              <span>2002 — 2004</span>
+              <span>2016 — 2020</span>
 
               <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
+                B.E. in Mechanical Engineering
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Changchun Institute of Technology</h4>
+
+              <span>2016 — 2020</span>
+
+              <p class="timeline-text">
+                B.E. in Mechanical Design, Manufacturing and Automation
               </p>
 
             </li>
@@ -579,7 +384,39 @@
 
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <ion-icon name="trophy-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Honors & Awards</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Dean's Scholarship</h4>
+
+              <span>2019</span>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">First-class Scholarship</h4>
+
+              <span>2018</span>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
             </div>
 
             <h3 class="h3">Experience</h3>
@@ -589,42 +426,39 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Creative director</h4>
+              <h4 class="h4 timeline-item-title">Research Assistant, Westlake University</h4>
 
-              <span>2015 — Present</span>
+              <span>Jun 2025 — Present</span>
 
               <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
+                School of Engineering · Advisor: Prof. Dixia Fan. Developed robust PPO-based control for underwater
+                manipulators and architected the Waterlily-RL fluid control framework.
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Art director</h4>
+              <h4 class="h4 timeline-item-title">M.S. Student, Imperial College London</h4>
 
-              <span>2013 — 2015</span>
+              <span>Oct 2023 — Oct 2024</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Department of Bioengineering · Advisor: Prof. Etienne Burdet. Designed cooperative supernumerary robotic
+                limbs for pipe assembly using trajectory planning and impedance control.
               </p>
 
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Web designer</h4>
+              <h4 class="h4 timeline-item-title">Research Assistant, Westlake University</h4>
 
-              <span>2010 — 2013</span>
+              <span>Jun 2022 — Sep 2023</span>
 
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Intelligent Industry Research Institute · Advisor: Prof. Yanxue Liang. Built an automated wall quality
+                inspection pipeline via point cloud segmentation and NURBS modeling.
               </p>
 
             </li>
@@ -635,63 +469,38 @@
 
         <section class="skill">
 
-          <h3 class="h3 skills-title">My skills</h3>
+          <h3 class="h3 skills-title">Skills</h3>
 
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Web design</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Graphic design</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Branding</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="50">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <ion-icon name="logo-python"></ion-icon>
+              <span>Python</span>
+            </div>
+            <div class="skill-item">
+              <ion-icon name="bar-chart-outline"></ion-icon>
+              <span>MATLAB</span>
+            </div>
+            <div class="skill-item">
+              <ion-icon name="git-network-outline"></ion-icon>
+              <span>ROS2</span>
+            </div>
+            <div class="skill-item">
+              <ion-icon name="terminal-outline"></ion-icon>
+              <span>C++</span>
+            </div>
+            <div class="skill-item">
+              <ion-icon name="cube-outline"></ion-icon>
+              <span>PyBullet</span>
+            </div>
+            <div class="skill-item">
+              <ion-icon name="hardware-chip-outline"></ion-icon>
+              <span>MuJoCo</span>
+            </div>
+            <div class="skill-item">
+              <ion-icon name="rocket-outline"></ion-icon>
+              <span>IsaacLab</span>
+            </div>
+          </div>
 
         </section>
 
@@ -705,7 +514,7 @@
         - #PORTFOLIO
       -->
 
-      <article class="portfolio" data-page="portfolio">
+      <article id="portfolio" class="portfolio" data-page="portfolio">
 
         <header>
           <h2 class="h2 article-title">Portfolio</h2>
@@ -720,15 +529,19 @@
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web design</button>
+              <button data-filter-btn>Reinforcement Learning</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Applications</button>
+              <button data-filter-btn>Perception</button>
             </li>
 
             <li class="filter-item">
-              <button data-filter-btn>Web development</button>
+              <button data-filter-btn>Manipulation</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Fluid Control</button>
             </li>
 
           </ul>
@@ -752,15 +565,19 @@
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web design</button>
+                <button data-select-item>Reinforcement Learning</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Applications</button>
+                <button data-select-item>Perception</button>
               </li>
 
               <li class="select-item">
-                <button data-select-item>Web development</button>
+                <button data-select-item>Manipulation</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Fluid Control</button>
               </li>
 
             </ul>
@@ -769,166 +586,157 @@
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+            <li class="project-item active" data-filter-item data-category="perception">
+              <div class="project-card">
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                <figure class="project-img project-video-wrapper">
+                  <video class="project-video" controls playsinline preload="metadata"
+                    aria-label="OpenArm hand-eye calibration demonstration">
+                    <source src="./assets/video/Hand-to-eye (eye-on-base) calibration.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                  </video>
                 </figure>
 
-                <h3 class="project-title">Finance</h3>
+                <h3 class="project-title">
+                  <a href="https://github.com/CROBOT974/openarm_calibration" target="_blank" rel="noopener noreferrer">
+                    OpenArm Hand-Eye Calibration
+                  </a>
+                </h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category">Perception</p>
 
-              </a>
+                <p class="project-description">Hand-eye calibration algorithm for the OpenArm robotic platform.</p>
+
+                <a class="project-repo-link" href="https://github.com/CROBOT974/openarm_calibration"
+                  target="_blank" rel="noopener noreferrer">
+                  <ion-icon name="logo-github"></ion-icon>
+                  <span>View repository</span>
+                </a>
+
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+            <li class="project-item active" data-filter-item data-category="reinforcement learning">
+              <div class="project-card">
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
+                <figure class="project-img project-video-wrapper">
+                  <video class="project-video" controls playsinline preload="metadata"
+                    aria-label="OpenArm reinforcement learning deployment demonstration">
+                    <source src="./assets/video/RL deployment.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                  </video>
                 </figure>
 
-                <h3 class="project-title">Orizon</h3>
+                <h3 class="project-title">
+                  <a href="https://github.com/CROBOT974/openarm_sim2real" target="_blank" rel="noopener noreferrer">
+                    RL Policy Deployment on OpenArm
+                  </a>
+                </h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category">Reinforcement Learning</p>
 
-              </a>
+                <p class="project-description">Real-world demonstration of a reinforcement learning policy deployed on OpenArm.</p>
+
+                <a class="project-repo-link" href="https://github.com/CROBOT974/openarm_sim2real"
+                  target="_blank" rel="noopener noreferrer">
+                  <ion-icon name="logo-github"></ion-icon>
+                  <span>View repository</span>
+                </a>
+
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+            <li class="project-item active" data-filter-item data-category="fluid control, reinforcement learning">
+              <div class="project-card">
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                <figure class="project-img project-video-wrapper">
+                  <video class="project-video" controls playsinline preload="metadata"
+                    aria-label="Reinforcement learning control of vortex-induced vibration demonstration">
+                    <source src="./assets/video/RL restains VIV.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                  </video>
                 </figure>
 
-                <h3 class="project-title">Fundo</h3>
+                <h3 class="project-title">
+                  <a href="https://github.com/CROBOT974/WaterLily-RL" target="_blank" rel="noopener noreferrer">
+                    RL Restrains VIV
+                  </a>
+                </h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category">Fluid Control</p>
 
-              </a>
+                <p class="project-description">Reinforcement learning control for restraining vortex-induced vibration.</p>
+
+                <a class="project-repo-link" href="https://github.com/CROBOT974/WaterLily-RL"
+                  target="_blank" rel="noopener noreferrer">
+                  <ion-icon name="logo-github"></ion-icon>
+                  <span>View repository</span>
+                </a>
+
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
+            <li class="project-item active" data-filter-item data-category="manipulation">
+              <div class="project-card">
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                <figure class="project-img project-video-wrapper">
+                  <video class="project-video" controls playsinline preload="metadata"
+                    aria-label="Supernumerary robotic limbs assembly demonstration">
+                    <source src="./assets/video/Supernumerary Robot Limbs.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                  </video>
                 </figure>
 
-                <h3 class="project-title">Brawlhalla</h3>
+                <h3 class="project-title">
+                  <a href="https://github.com/CROBOT974/Development-of-Trajectory-Based-Control-of-Supernumerary-Robotic-Limbs-for-Assembling-Tasks"
+                    target="_blank" rel="noopener noreferrer">
+                    Supernumerary Robot Limbs
+                  </a>
+                </h3>
 
-                <p class="project-category">Applications</p>
+                <p class="project-category">Manipulation</p>
 
-              </a>
+                <p class="project-description">Trajectory-based control of supernumerary robotic limbs for assembly tasks.</p>
+
+                <a class="project-repo-link"
+                  href="https://github.com/CROBOT974/Development-of-Trajectory-Based-Control-of-Supernumerary-Robotic-Limbs-for-Assembling-Tasks"
+                  target="_blank" rel="noopener noreferrer">
+                  <ion-icon name="logo-github"></ion-icon>
+                  <span>View repository</span>
+                </a>
+
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+            <li class="project-item active" data-filter-item data-category="manipulation">
+              <div class="project-card">
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                <figure class="project-img project-video-wrapper">
+                  <video class="project-video" controls playsinline preload="metadata"
+                    aria-label="Kinova Gen3 impedance control demonstration">
+                    <source src="./assets/video/Impedance Control.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                  </video>
                 </figure>
 
-                <h3 class="project-title">DSM.</h3>
+                <h3 class="project-title">
+                  <a href="https://github.com/CROBOT974/KinovaGen3-impedance-controller" target="_blank"
+                    rel="noopener noreferrer">
+                    Impedance Control
+                  </a>
+                </h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category">Manipulation</p>
 
-              </a>
-            </li>
+                <p class="project-description">Impedance control demonstration with the Kinova Gen3 robotic arm.</p>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
+                <a class="project-repo-link" href="https://github.com/CROBOT974/KinovaGen3-impedance-controller"
+                  target="_blank" rel="noopener noreferrer">
+                  <ion-icon name="logo-github"></ion-icon>
+                  <span>View repository</span>
+                </a>
 
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
+              </div>
             </li>
 
           </ul>
@@ -945,10 +753,10 @@
         - #BLOG
       -->
 
-      <article class="blog" data-page="blog">
+      <article id="publications" class="blog" data-page="publications">
 
         <header>
-          <h2 class="h2 article-title">Blog</h2>
+          <h2 class="h2 article-title">Publications</h2>
         </header>
 
         <section class="blog-posts">
@@ -956,26 +764,22 @@
           <ul class="blog-posts-list">
 
             <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
+              <a href="https://arxiv.org/pdf/2508.05977" target="_blank">
 
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category">Preprint</p>
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <time datetime="2026">2026</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+                  <h3 class="h3 blog-item-title">Language-Guided Fluid Control via Semantic Rewards in Reinforcement Learning</h3>
 
                   <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                    A. Liang, <strong>C. Cheng</strong>, D. Chen, B. Sun, D. Fan — Engineering Applications of Artificial Intelligence (under review).
                   </p>
 
                 </div>
@@ -986,24 +790,44 @@
             <li class="blog-post-item">
               <a href="#">
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Preprint</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2026">2026</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Active Manipulation of Vortex-Induced Vibrations through Phase-Aware Twin-Rotating Actuation via Deep Reinforcement Learning</h3>
+
+                  <p class="blog-text">
+                    X. Tong, C. Shang, <strong>C. Cheng</strong>, Z. Hu, J. Zhu, D. Fan — Journal of Fluid Mechanics (under review).
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="https://doi.org/10.1080/19942060.2026.2709266" target="_blank">
 
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category">Journal</p>
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <time datetime="2026">2026</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+                  <h3 class="h3 blog-item-title">Active Learning of Hydrodynamic and Scalar Transport Response in Cylinder Arrays</h3>
 
                   <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
+                    A. Liang, Z. Ding, Y. Chen, <strong>C. Cheng</strong>, Y. Yan — Engineering Applications of Computational Fluid Mechanics, 20(1).
                   </p>
 
                 </div>
@@ -1014,108 +838,20 @@
             <li class="blog-post-item">
               <a href="#">
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
                 <div class="blog-content">
 
                   <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+                    <p class="blog-category">Conference</p>
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                    <time datetime="2026">2026</time>
                   </div>
 
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
+                  <h3 class="h3 blog-item-title">πwater: Real-World VLA Framework for Underwater Manipulation with Hydrodynamics-Aware Enhancement</h3>
 
                   <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
+                    Y. Zhu, W. Zhangyuan, X. Shao, Y. Chen, <strong>C. Cheng</strong>, Y. Shi, L. Song, W. Li, W. Cui, M. Ge, D. Fan — IEEE/RSJ IROS (in press).
                   </p>
 
                 </div>
@@ -1137,41 +873,18 @@
         - #CONTACT
       -->
 
-      <article class="contact" data-page="contact">
+      <article id="contact" class="contact" data-page="contact">
 
         <header>
-          <h2 class="h2 article-title">Contact</h2>
+          <h2 class="h2 article-title">Address</h2>
         </header>
 
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              src="https://maps.google.com/maps?q=Westlake%20University%2C%20Hangzhou&t=&z=13&ie=UTF8&iwloc=&output=embed"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
         </section>
 
       </article>
