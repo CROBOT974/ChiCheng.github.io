@@ -424,42 +424,118 @@
 
           <ol class="timeline-list">
 
-            <li class="timeline-item">
+            <li class="timeline-item experience-item">
 
-              <h4 class="h4 timeline-item-title">Research Assistant, Westlake University</h4>
+              <div class="experience-heading">
+                <div>
+                  <h4 class="h4 timeline-item-title">Westlake University</h4>
+                  <p class="experience-role">Research Assistant</p>
+                </div>
+                <p class="experience-period">Jun 2025 — Present</p>
+              </div>
 
-              <span>Jun 2025 — Present</span>
+              <dl class="experience-meta">
+                <div>
+                  <dt>Department</dt>
+                  <dd>School of Engineering</dd>
+                </div>
+                <div>
+                  <dt>Advisor</dt>
+                  <dd>Prof. Dixia Fan</dd>
+                </div>
+              </dl>
 
-              <p class="timeline-text">
-                School of Engineering · Advisor: Prof. Dixia Fan. Developed robust PPO-based control for underwater
-                manipulators and architected the Waterlily-RL fluid control framework.
-              </p>
+              <ul class="experience-project-list">
+                <li class="experience-project">
+                  <h5>Robust End-Effector Stabilization of 7-DoF Underwater Manipulators</h5>
+                  <p>
+                    Developed a robust PPO-based controller that maintains end-effector stability under
+                    disturbance-induced base motion. An asymmetric actor-critic uses privileged base-motion and
+                    hydrodynamic information during training, while a spatio-temporal network predicts
+                    hydrodynamic-induced joint torques from motion history to provide an efficient residual environment
+                    in Isaac Lab.
+                  </p>
+                </li>
+                <li class="experience-project">
+                  <h5>WaterLily-RL: A Cross-Language Framework for Fluid Control</h5>
+                  <p>
+                    Proposed and architected a framework connecting the WaterLily.jl fluid-dynamics engine with
+                    Stable-Baselines3. Built the high-performance Julia simulation backend, Python Gymnasium interface,
+                    and modular task configuration system; validated the framework on vortex-induced vibration control
+                    and airfoil optimization with real-time visualization.
+                  </p>
+                </li>
+              </ul>
 
             </li>
 
-            <li class="timeline-item">
+            <li class="timeline-item experience-item">
 
-              <h4 class="h4 timeline-item-title">M.S. Student, Imperial College London</h4>
+              <div class="experience-heading">
+                <div>
+                  <h4 class="h4 timeline-item-title">Imperial College London</h4>
+                  <p class="experience-role">M.S. Student</p>
+                </div>
+                <p class="experience-period">Oct 2023 — Oct 2024</p>
+              </div>
 
-              <span>Oct 2023 — Oct 2024</span>
+              <dl class="experience-meta">
+                <div>
+                  <dt>Department</dt>
+                  <dd>Department of Bioengineering</dd>
+                </div>
+                <div>
+                  <dt>Advisor</dt>
+                  <dd>Prof. Etienne Burdet</dd>
+                </div>
+              </dl>
 
-              <p class="timeline-text">
-                Department of Bioengineering · Advisor: Prof. Etienne Burdet. Designed cooperative supernumerary robotic
-                limbs for pipe assembly using trajectory planning and impedance control.
-              </p>
+              <ul class="experience-project-list">
+                <li class="experience-project">
+                  <h5>Cooperative Supernumerary Robotic Limbs for Pipe Assembly</h5>
+                  <p>
+                    Designed a hybrid controller combining trajectory planning and impedance control for wall-mounted
+                    pipe assembly. Developed an improved RRT-Connect algorithm that plans in real time from the worker's
+                    hand position and paired it with compliant impedance control, enabling safe autonomous
+                    co-transportation and installation without demonstration data.
+                  </p>
+                </li>
+              </ul>
 
             </li>
 
-            <li class="timeline-item">
+            <li class="timeline-item experience-item">
 
-              <h4 class="h4 timeline-item-title">Research Assistant, Westlake University</h4>
+              <div class="experience-heading">
+                <div>
+                  <h4 class="h4 timeline-item-title">Westlake University</h4>
+                  <p class="experience-role">Research Assistant</p>
+                </div>
+                <p class="experience-period">Jun 2022 — Sep 2023</p>
+              </div>
 
-              <span>Jun 2022 — Sep 2023</span>
+              <dl class="experience-meta">
+                <div>
+                  <dt>Department</dt>
+                  <dd>Intelligent Industry Research Institute</dd>
+                </div>
+                <div>
+                  <dt>Advisor</dt>
+                  <dd>Prof. Yanxue Liang</dd>
+                </div>
+              </dl>
 
-              <p class="timeline-text">
-                Intelligent Industry Research Institute · Advisor: Prof. Yanxue Liang. Built an automated wall quality
-                inspection pipeline via point cloud segmentation and NURBS modeling.
-              </p>
+              <ul class="experience-project-list">
+                <li class="experience-project">
+                  <h5>Automated Wall Quality Inspection</h5>
+                  <p>
+                    Developed an inspection pipeline that converts LiDAR point clouds of indoor environments into
+                    quantitative wall flatness and verticality measurements. Implemented 3D point-cloud edge detection
+                    for wall seams and boundaries, then generated virtual rulers from NURBS surfaces reconstructed from
+                    segmented walls to enable high-precision, full-wall assessment.
+                  </p>
+                </li>
+              </ul>
 
             </li>
 
