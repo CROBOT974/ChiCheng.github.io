@@ -1568,6 +1568,10 @@ textarea.form-input::-webkit-resizer { display: none; }
     background-repeat: no-repeat;
   }
 
+  .sidebar .info_more-btn span { display: none; }
+
+  .sidebar .info_more-btn ion-icon { display: block; }
+
 }
 
 /**
