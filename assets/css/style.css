@@ -1579,7 +1579,24 @@ textarea.form-input::-webkit-resizer { display: none; }
     background-repeat: no-repeat;
   }
 
-  .sidebar .info_more-btn ion-icon { display: block; }
+  .sidebar .info_more-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+  }
+
+  .sidebar .info_more-btn ion-icon {
+    display: none;
+  }
+
+  .sidebar .info_more-btn::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translate(-1px, -1px);
+  }
 
 }
 
