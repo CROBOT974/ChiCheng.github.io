@@ -455,8 +455,19 @@ main {
 }
 
 .avatar-box {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
+}
+
+.avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .info-content .name {
@@ -481,13 +492,13 @@ main {
   position: absolute;
   top: auto;
   right: -15px;
-  bottom: 0;
+  bottom: -15px;
   left: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
-  border-radius: 15px 0;
+  border-radius: 15px 0 20px 0;
   font-size: 13px;
   color: var(--orange-yellow-crayola);
   background: var(--border-gradient-onyx);
@@ -514,7 +525,7 @@ main {
 .info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
 
 .info_more-btn span {
-  display: block;
+  display: none;
   font-size: 10px;
   white-space: nowrap;
 }
@@ -1568,8 +1579,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     background-repeat: no-repeat;
   }
 
-  .sidebar .info_more-btn span { display: none; }
-
   .sidebar .info_more-btn ion-icon { display: block; }
 
 }
@@ -1682,9 +1691,11 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar-info { gap: 25px; }
 
-  .avatar-box { border-radius: 30px; }
-
-  .avatar-box img { width: 120px; }
+  .avatar-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+  }
 
   .info-content .name { margin-bottom: 15px; }
 
@@ -1693,17 +1704,10 @@ textarea.form-input::-webkit-resizer { display: none; }
   .info_more-btn {
     top: auto;
     right: -30px;
-    bottom: -10px;
+    bottom: -30px;
     left: auto;
     padding: 10px 15px;
   }
-
-  .info_more-btn span {
-    display: block;
-    font-size: var(--fs-8);
-  }
-
-  .info_more-btn ion-icon { display: none; }
 
   .separator { margin: 32px 0; }
 
@@ -1897,6 +1901,13 @@ textarea.form-input::-webkit-resizer { display: none; }
  */
 
 @media (min-width: 768px) {
+
+  .info_more-btn span {
+    display: block;
+    font-size: var(--fs-8);
+  }
+
+  .info_more-btn ion-icon { display: none; }
 
   /**
    * REUSED STYLE
@@ -2223,13 +2234,15 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .sidebar .avatar-box {
+    width: 145px;
+    height: 145px;
     overflow: hidden;
     border-radius: 24px;
   }
 
   .sidebar .avatar-box img {
-    width: 145px;
-    height: 145px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
   }
