@@ -145,21 +145,52 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-const observerOptions = { root: null, threshold: 0.45 };
-const sectionObserver = new IntersectionObserver(function (entries) {
-  const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+const navbar = document.querySelector(".navbar");
+let scrollTicking = false;
 
-  if (!visibleEntries.length) return;
+/*
+ * Keep the active link tied to the section whose top has reached the
+ * navigation area. This works for long sections as well as short ones,
+ * unlike an IntersectionObserver threshold based on visible percentage.
+ */
+const updateActiveNavLink = function () {
+  if (!pages.length) return;
 
-  const mostVisible = visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-  const targetId = mostVisible.target.id;
-  const activeLink = document.querySelector(`[data-target="${targetId}"]`);
+  const navbarRect = navbar ? navbar.getBoundingClientRect() : null;
+  const navbarPosition = navbar ? window.getComputedStyle(navbar).position : "";
+  const isBottomNavbar = navbarPosition === "fixed" && navbarRect &&
+    navbarRect.top > window.innerHeight / 2;
+
+  // On mobile the navbar is fixed at the bottom; on desktop it is sticky at the top.
+  const activationLine = isBottomNavbar
+    ? navbarRect.top - 16
+    : (navbarRect ? navbarRect.bottom + 16 : 90);
+
+  let currentPage = pages[0];
+
+  pages.forEach((page) => {
+    if (page.getBoundingClientRect().top <= activationLine) {
+      currentPage = page;
+    }
+  });
+
+  const activeLink = document.querySelector(`[data-target="${currentPage.id}"]`);
 
   if (activeLink) {
     setActiveNavLink(activeLink);
   }
-}, observerOptions);
+};
 
-pages.forEach((page) => {
-  sectionObserver.observe(page);
-});
+const handleScroll = function () {
+  if (scrollTicking) return;
+
+  scrollTicking = true;
+  window.requestAnimationFrame(function () {
+    updateActiveNavLink();
+    scrollTicking = false;
+  });
+};
+
+window.addEventListener("scroll", handleScroll, { passive: true });
+window.addEventListener("resize", updateActiveNavLink);
+updateActiveNavLink();
